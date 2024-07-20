@@ -132,7 +132,12 @@ def main():
             target_language_code = language_codes[language_choice]
             
             # 사용자 입력
-            user_input = input("Enter (enter the text you want to translate): ")
+            user_input = input("Enter (enter the text you want to translate, max 1000 characters): ")
+            
+            # 길이 제한 확인
+            if len(user_input) > 1000:
+                print("Input text exceeds 1000 characters. Please try again.")
+                continue
             
             # 번역 및 TTS
             translate_and_speak_gtts(user_input, target_language_code)
@@ -146,7 +151,12 @@ def main():
             target_language_code = language_codes[language_choice]
             
             # 사용자 입력
-            user_input = input("Enter (enter the text you want to translate): ")
+            user_input = input("Enter (enter the text you want to translate, max 1000 characters): ")
+            
+            # 길이 제한 확인
+            if len(user_input) > 1000:
+                print("Input text exceeds 1000 characters. Please try again.")
+                continue
             
             # 번역 및 TTS
             translate_and_speak_pyttsx3(user_input, target_language_code, engine)
