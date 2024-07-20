@@ -64,9 +64,9 @@ To use the audio captured by pyaudio as the microphone input in Discord, you nee
    - In Voicemeeter, set the Hardware Input to VB-Audio Cable.
    - Set the Virtual Input as the Input Device in Discord.
 
-How to use it
+## How to use it
 
-1.Please install python 3.8+
-2.Please install pip install -r requirements.txt
-3.open type_to_speak_tts.py
+-Please install python 3.8+
+-Please install pip install -r requirements.txt
+-open type_to_speak_tts.py
 Enjoy!
