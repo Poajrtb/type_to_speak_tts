@@ -1,0 +1,6 @@
+subprocess==3.5.4
+pyttsx3==2.90
+googletrans==3.1.0a0
+gtts==2.2.4
+io==0.5.0
+pygame==2.1.2
