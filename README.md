@@ -4,6 +4,7 @@
 
 **Please install pip install -r requirements.txt**
 
-**open type_to_speak_tts.py**
+**If you go to this site, you can download the file in exe format! I'm upgrading the version as well!**
+# https://type-to-speak-tts.netlify.app/
 
 **Enjoy!**
