@@ -1,4 +1,5 @@
 Download and install VB-Cable:
+Donwload link --> https://vb-audio.com/Cable/
 
 From the VB-Cable Download page, download the VB-Cable.
 Run and install the downloaded file.
