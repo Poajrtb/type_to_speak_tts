@@ -1,15 +1,25 @@
-1.VB-Cable 다운로드 및 설치:
-    VB-Cable 다운로드 페이지에서 VB-Cable을 다운로드합니다.
-    다운로드한 파일을 실행하여 설치합니다.
-2.VB-Cable을 기본 오디오 장치로 설정:
-    Windows에서 제어판 > 하드웨어 및 소리 > 소리로 이동합니다.
-    재생 탭에서 VB-Cable을 기본 장치로 설정합니다.
-3.Discord 설정:
-    Discord를 열고 사용자 설정 (톱니바퀴 아이콘)을 클릭합니다.
-    음성 및 비디오 섹션으로 이동합니다.
-    입력 장치에서 VB-Cable을 선택합니다.
+1. Download and install VB-Cable:
+    From the VB-Cable Download page, download the VB-Cable.
+    Run and install the downloaded file.
+2. Set VB-Cable as the default audio device:
+    In Windows, navigate to Control Panel > Hardware and Sound > Sound.
+    On the Play tab, set VB-Cable as the default device.
+3.Discord Settings:
+    Open Discord and click User Settings (tooth wheel icon).
+    Go to the Voice and Video section.
+    On the input device, select VB-Cable.
+    
+4.Enable Stereo Mix:
+		Go to Control Panel > Hardware and Sound > Sound.
+		On the Recording tab, locate and enable the Stereo Mix. If it is not listed, you can make it visible by right-clicking in a blank space and selecting Show Disabled Devices.
+5.Discord Settings:
+        Open Discord and click User Settings.
+		Go to Voice and Video and set the input device to Stereo Mix.
 
+3. Using an Audio Mixer or a Hardware Mixer
+You can use a hardware mixer or audio mixer to mix multiple audio sources and enter them into Discord, which requires hardware and setup, and physical equipment.
 
+One of these methods allows you to hear MP3 playback on Discord. VB-Cable or Stereo Mix is generally a more accessible and software fixer.
 
 How to use it
 
