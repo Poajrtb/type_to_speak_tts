@@ -1,6 +1,5 @@
 import os
 import subprocess
-import pyttsx3
 from googletrans import Translator, LANGUAGES
 from gtts import gTTS
 import pygame
@@ -19,7 +18,6 @@ def install_package(package_name):
 # 모듈 확인 및 설치
 def check_and_install_packages():
     packages = {
-        'pyttsx3': 'pyttsx3',
         'googletrans': 'googletrans==4.0.0-rc1',
         'gtts': 'gtts',
         'pygame': 'pygame'
@@ -43,11 +41,6 @@ def check_and_install_packages():
                         print(f"Abandon installation of module '{package}', exit the program.")
                         exit()
 
-# TTS 엔진 초기화
-def initialize_engine():
-    engine = pyttsx3.init()
-    return engine
-
 # 언어 선택 함수
 def select_language():
     print("Please select a language:")
@@ -70,32 +63,24 @@ def select_language():
         else:
             print("Invalid input, please try again.")
 
-# pyttsx3를 사용한 번역 및 TTS 출력 함수
-def translate_and_speak_pyttsx3(text, target_language_code, engine):
-    # 번역
+# 번역 함수
+def translate_text(text, target_language_code):
     translator = Translator()
-    translated = translator.translate(text, dest=target_language_code)
-    translated_text = translated.text
-    print(f"Translated text ({LANGUAGES[target_language_code]}): {translated_text}")
-    
-    # TTS 설정
-    engine.setProperty('voice', target_language_code)
-    engine.setProperty('rate', 150)  # 음성 속도 조정
-    engine.setProperty('volume', 1.0)  # 음량 조정
-    engine.say(translated_text)
-    
-    # 음성이 끝날 때까지 대기
-    engine.runAndWait()
+    try:
+        translated = translator.translate(text, dest=target_language_code)
+        return translated.text
+    except Exception as e:
+        print(f"Translation failed: {e}")
+        return None
 
 # gTTS를 사용한 번역 및 TTS 출력 함수
 def translate_and_speak_gtts(text, target_language_code):
-    # 번역
-    translator = Translator()
-    translated = translator.translate(text, dest=target_language_code)
-    translated_text = translated.text
+    translated_text = translate_text(text, target_language_code)
+    if translated_text is None:
+        return
+    
     print(f"Translated text ({LANGUAGES[target_language_code]}): {translated_text}")
     
-    # TTS
     tts = gTTS(text=translated_text, lang=target_language_code)
     
     # gTTS 음성을 파일로 저장
@@ -120,46 +105,18 @@ def translate_and_speak_gtts(text, target_language_code):
 def main():
     check_and_install_packages()
     
-    # 사용자에게 TTS 엔진을 선택하도록 함
-    use_gtts = input("Do you want to use gTTS? (y/n): ").strip().lower() == 'y'
-    
-    if use_gtts:
-        while True:
-            # 언어 선택
-            language_choice = select_language()
-            # 언어 코드 매핑
-            language_codes = {1: 'ko', 2: 'ja', 3: 'en', 4: 'zh', 5: 'ru', 6: 'es', 7: 'pl', 8: 'ne', 9: 'en-GB', 10: 'fr', 11: 'pt'}
-            target_language_code = language_codes[language_choice]
-            
-            # 사용자 입력
-            user_input = input("Enter (enter the text you want to translate, max 1000 characters): ")
-            
-            # 길이 제한 확인
-            if len(user_input) > 1000:
-                print("Input text exceeds 1000 characters. Please try again.")
-                continue
-            
-            # 번역 및 TTS
-            translate_and_speak_gtts(user_input, target_language_code)
-    else:
-        engine = initialize_engine()
-        while True:
-            # 언어 선택
-            language_choice = select_language()
-            # 언어 코드 매핑
-            language_codes = {1: 'ko', 2: 'ja', 3: 'en', 4: 'zh', 5: 'ru', 6: 'es', 7: 'pl', 8: 'ne', 9: 'en-GB', 10: 'fr', 11: 'pt'}
-            target_language_code = language_codes[language_choice]
-            
-            # 사용자 입력
-            user_input = input("Enter (enter the text you want to translate, max 1000 characters): ")
-            
-            # 길이 제한 확인
-            if len(user_input) > 1000:
-                print("Input text exceeds 1000 characters. Please try again.")
-                continue
-            
-            # 번역 및 TTS
-            translate_and_speak_pyttsx3(user_input, target_language_code, engine)
+    while True:
+        # 언어 선택
+        language_choice = select_language()
+        # 언어 코드 매핑
+        language_codes = {1: 'ko', 2: 'ja', 3: 'en', 4: 'zh-cn', 5: 'ru', 6: 'es', 7: 'pl', 8: 'ne', 9: 'en', 10: 'fr', 11: 'pt'}
+        target_language_code = language_codes[language_choice]
+        
+        # 사용자 입력
+        user_input = input("Enter the text you want to translate: ")
+        
+        # 번역 및 TTS
+        translate_and_speak_gtts(user_input, target_language_code)
 
 if __name__ == "__main__":
     main()
