@@ -18,8 +18,6 @@ def install_package(package_name):
 
 # 모듈 확인 및 설치
 def check_and_install_packages():
-    display_animation()  # 애니메이션 먼저 출력
-
     packages = {
         'pyttsx3': 'pyttsx3',
         'googletrans': 'googletrans==4.0.0-rc1',
