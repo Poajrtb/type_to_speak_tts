@@ -1,4 +1,4 @@
-# The number of countries in the world is 228, but why do you only apply for 107 languages?
+# The number of countries in the world is 228, but why do you only apply for 63 languages?
 
   **1.Data Availability: To provide high quality translation requires vast amounts of data on that language**
   
