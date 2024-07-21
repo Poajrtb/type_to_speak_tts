@@ -8,5 +8,8 @@
 
 # How to use it
 
+**Python 3.8+**
+**pip install -r requirements.txt**
+
 **Go to this site to download! I'm upgrading the version every day! I'll let Github know whenever I upgrade!**
 # https://type-to-speak-tts.netlify.app/
