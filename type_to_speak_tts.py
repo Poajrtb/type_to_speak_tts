@@ -30,23 +30,6 @@ def translate_text(text, target_language_code):
         print(f"Translation failed: {e}")
         return None
 
-# Function to display a message using pygame
-def show_message(message):
-    pygame.init()
-    screen = pygame.display.set_mode((400, 200))
-    pygame.display.set_caption("Message")
-    
-    font = pygame.font.Font(None, 36)
-    text_surface = font.render(message, True, (255, 255, 255))
-    screen.fill((0, 0, 0))
-    screen.blit(text_surface, (50, 80))
-    pygame.display.update()
-    
-    # Display the message for 2 seconds
-    time.sleep(2)
-    
-    pygame.quit()
-
 # Function to translate and speak using gTTS
 def translate_and_speak_gtts(text, target_language_code):
     translated_text = translate_text(text, target_language_code)
@@ -58,9 +41,6 @@ def translate_and_speak_gtts(text, target_language_code):
     # Copy translated text to clipboard
     pyperclip.copy(translated_text)
     print("Translated text has been copied to clipboard.")
-    
-    # Show message using pygame
-    show_message("복사가 되었습니다")
     
     print("To exit the program, press Ctrl+C.")
     
