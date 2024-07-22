@@ -1,4 +1,5 @@
-English
+# Made By lee.programm.coder
+
 **Go to this site to download! I'm upgrading the version every day! I'll let Github know whenever I upgrade!**
 # https://type-to-speak-tts.netlify.app/
 
