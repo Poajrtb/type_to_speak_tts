@@ -23,3 +23,9 @@
 **I heard the exe file found a virus, so I made it open source! If you modify this code and let me know from discord to lee.programm.coder, I will correct the code right away!**
 
 **version made on July 22, 2024, at 4:23 p.m**
+
+**2024-07-22 9:03 PM v0.5**
+
+**I removed the copy.exe file because copy.exe opens and speaks tts**
+
+**version made on July 22, 2024, at 9:03 p.m**
